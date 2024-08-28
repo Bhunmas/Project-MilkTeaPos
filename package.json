@@ -6,7 +6,7 @@
   "scripts": {
     "build": "yarn",
     "nodemon": "nodemon index.ts",
-    "start": "npx node index.ts",
+    "start": "nodemon index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Bhunma",
