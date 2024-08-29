@@ -1,38 +1,36 @@
-// Declare Command
+// // Declare Command
 declare var require:any;
 
-// require library
-const http = require('http');
-const url = require('url');
+// // require library
+const http = new require('http');
 
-let Student = {
-    user : "a",
-    age : '10',
-    url : null
+
+// import module
+import  { ApiService }   from './Service/api';
+const apiService:ApiService = new ApiService();
+
+function init(){
+    const server = http.createServer((req:any,res:any)=>{
+        const result = apiService.apiService(req,res);
+        console.log('Create Server : ');
+        res.end(result); 
+    });
+    server.listen(3000);
+    
+    console.log('show : ')
 }
 
-const server = http.createServer((req,res)=>{
-    let result = apiService(req,res);
-    console.log('Create Server : ');
-    res.end(result); 
-});
+init();
 
 
 
 
 
-function apiService(req,res){
-    if(req.method === 'GET'){
-        if(req.url.indexOf('?') === 1){
-            let param = req.url.split('?');
-            Student.url = param;
-            console.log('url : ',param[param.length-1]);
-            return JSON.stringify(Student);
-        }
-      
-    }
-    return JSON.stringify({ User : 'Bun' });
-}
 
-server.listen(3000);
+
+
+
+
+
+
 
