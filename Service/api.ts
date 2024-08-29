@@ -14,7 +14,7 @@ export class ApiService{
             if(req.url.indexOf('?') === 1){
                 let param = req.url.split('?');
                 this.Student.url = param;
-                console.log('url : ',param[param.length-1]);
+                console.log('urlfasf : ',param[param.length-1]);
                 return JSON.stringify(this.Student);
             }
         
