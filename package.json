@@ -5,15 +5,24 @@
   "main": "index.js",
   "scripts": {
     "build": "yarn",
-    "prestart": "chmod +x node_modules/.bin/ts-node",
-    "start": "node index.ts",
+    "nodemon": "nodemon index.ts",
+    "start": "ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Bhunma",
   "license": "ISC",
   "dependencies": {
+    "axois": "^0.0.1-security",
     "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "node-ts": "^6.1.2",
+    "nodemon": "^3.1.4",
+    "server": "^1.0.39",
     "ts-node": "^10.9.2",
-    "twilio": "^4.16.0"
+    "twilio": "^4.16.0",
+    "url": "^0.11.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.1"
   }
 }
